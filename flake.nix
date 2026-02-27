@@ -36,6 +36,7 @@
         in
           pkgs.mkShell {
             nativeBuildInputs = [
+                pkgs.cargo-flamegraph
             ];
             buildInputs = [
               rustToolchain
