@@ -7,37 +7,41 @@
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    fenix,
-  }: let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin"];
+      perSystem = {
+        pkgs,
+        system,
+        ...
+      }: {
+        _module.args.pkgs = import inputs.nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+        devShells.default = let
+          fenixPkgs = inputs.fenix.packages.${system};
+          # rustToolchain = with fenixPkgs;
+          #   combine [
+          #     stable.rustc
+          #     stable.cargo
+          #     stable.clippy
+          #     stable.rust-analyzer
+          #     stable.rustfmt
+          #   ];
+          rustToolchain = fenixPkgs.default.toolchain;
+        in
+          pkgs.mkShell {
+            nativeBuildInputs = [
+            ];
+            buildInputs = [
+              rustToolchain
+            ];
+            # LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath buildInputs;
+          };
+      };
     };
-    fenixPkgs = fenix.packages.${system};
-    # rustToolchain = with fenixPkgs;
-    #   combine [
-    #     stable.rustc
-    #     stable.cargo
-    #     stable.clippy
-    #     stable.rust-analyzer
-    #     stable.rustfmt
-    #   ];
-    rustToolchain = fenixPkgs.default.toolchain;
-  in {
-    inherit fenixPkgs;
-    devShells.${system}.default = pkgs.mkShell rec {
-      nativeBuildInputs = with pkgs; [
-      ];
-      buildInputs = with pkgs; [
-        rustToolchain
-      ];
-      LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath buildInputs;
-    };
-  };
 }
