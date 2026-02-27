@@ -10,7 +10,7 @@ pub fn find_median_sorted_arrays(
     nums1: Vec<i32>,
     nums2: Vec<i32>,
 ) -> f64 {
-    let (nums1, nums2) = if nums1.len() < nums2.len() {
+    let (nums1, nums2) = if nums1.len() > nums2.len() {
         (
             &nums2, &nums1,
         )
@@ -37,7 +37,6 @@ fn median(
 ) -> f64 {
     let total_len = a1.len() + a2.len();
     let p1 = (low + high) / 2;
-    // let p2 = total_len / 2 - p1;
     let p2 = total_len.div_ceil(2) - p1;
 
     let a1_left_max = if p1 == 0 {
@@ -231,7 +230,7 @@ mod tests {
         let actual = find_median_sorted_arrays(
             nums1, nums2,
         );
-        let expected = 4.0;
+        let expected = 5.0;
         assert_eq!(
             actual,
             expected
