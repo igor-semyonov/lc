@@ -1,5 +1,9 @@
 fn main() {
-    println!("Hello, world!");
+    let s = String::from("There are four lights!");
+    println!(
+        "{}",
+        longest_palindrome(s)
+    );
 }
 
 fn longest_palindrome(s: String) -> String {
