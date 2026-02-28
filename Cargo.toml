@@ -1,6 +1,10 @@
 [workspace]
 resolver = "3"
-members = ["./problems/*", "problems/palindromic-substring"]
+members = [
+  "./problems/median-of-sorted-arrays/",
+  "./problems/palindromic-substring",
+  "./problems/regular-expression-matching",
+]
 
 [profile.release]
 debug = true
