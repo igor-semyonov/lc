@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["./problems/median-of-sorted-arrays"]
+members = ["./problems/*"]
 
 [profile.release]
 debug = true
