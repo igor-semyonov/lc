@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["./problems/*"]
+members = ["./problems/*", "problems/palindromic-substring"]
 
 [profile.release]
 debug = true
