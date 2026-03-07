@@ -3,7 +3,7 @@ resolver = "3"
 members = [
   "./problems/median-of-sorted-arrays/",
   "./problems/palindromic-substring",
-  "./problems/regular-expression-matching",
+  "./problems/regular-expression-matching", "problems/spiral-matrix",
 ]
 
 [profile.release]
