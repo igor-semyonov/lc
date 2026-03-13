@@ -1,0 +1,6 @@
+[package]
+name = "p3296-minimum-nmber-seconds-to-eat-mountain"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
