@@ -34,3 +34,23 @@ fn n4k11(){
     let actual = find_kth_bit(4, 11);
     assert_eq!(expected, actual);
 }
+
+#[test]
+fn n2(){
+    let actual = find_next_nth_num(0);
+    let expected = 0b011;
+    assert_eq!(
+        actual,
+        expected
+    );
+}
+
+#[test]
+fn n4(){
+    let actual = find_nth_num(4);
+    let expected = 0b011100110110001;
+    assert_eq!(
+        actual,
+        expected
+    );
+}
