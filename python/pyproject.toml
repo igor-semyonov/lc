@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/leetcode-py"]
+
+[project]
+name = "leetcode-py"
+version = "0.1.0"
+authors = [{ name = "Igor Semyonov", email = "igor@semyonov.xyz" }]
+description = "Leetcode practice in python"
+requires-python = ">=3.13"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+dependencies = [
+    "numpy>=2.4.3",
+    "pandas>=3.0.1",
+]
+
+[dependency-groups]
+dev = ["pip>=25.2", "ruff>=0.12.4", "black>=25.1.0", "isort>=6.0.1"]
