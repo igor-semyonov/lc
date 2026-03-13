@@ -6,10 +6,10 @@ build-backend = "hatchling.build"
 source = "vcs"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/leetcode-py"]
+packages = ["src/leetcode"]
 
 [project]
-name = "leetcode-py"
+name = "leetcode"
 version = "0.1.0"
 authors = [{ name = "Igor Semyonov", email = "igor@semyonov.xyz" }]
 description = "Leetcode practice in python"
