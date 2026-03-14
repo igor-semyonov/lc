@@ -25,4 +25,10 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = ["pip>=25.2", "ruff>=0.12.4", "black>=25.1.0", "isort>=6.0.1"]
+dev = [
+    "pip>=25.2",
+    "ruff>=0.12.4",
+    "black>=25.1.0",
+    "isort>=6.0.1",
+    "pytest>=9.0.2",
+]
