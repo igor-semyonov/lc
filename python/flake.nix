@@ -22,7 +22,7 @@
         openblas
         stdenv.cc.cc.lib
         pkgs.cudaPackages.cudatoolkit
-        linuxPackages.nvidia_x11
+        # linuxPackages.nvidia_x11
         pkgs.libgcc
 
         # matplotlib and pyside6
