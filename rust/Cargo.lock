@@ -7,11 +7,19 @@ name = "leetcode-practice"
 version = "0.1.0"
 
 [[package]]
+name = "p1382-balance-binary-search-tree"
+version = "0.1.0"
+
+[[package]]
 name = "p1545-find-kth-bit-in-nth-binary-string"
 version = "0.1.0"
 
 [[package]]
 name = "p3296-minimum-nmber-seconds-to-eat-mountain"
+version = "0.1.0"
+
+[[package]]
+name = "p761-special-binary-strings"
 version = "0.1.0"
 
 [[package]]
