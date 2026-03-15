@@ -26,6 +26,15 @@ class TreeNode:
                 val <= right.val
             ), f"right child node {right.val} should be at most parent node {val}."
 
+    def walk(self) -> list:
+        return walk_tree(self)
+
+    def balance(self) -> Self:
+        return balance_bst(self)
+
+    def depth(self) -> int:
+        return tree_depth(self)
+
 
 class Solution:
     def balanceBST(self, root: TreeNode):
